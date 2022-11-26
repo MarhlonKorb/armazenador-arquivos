@@ -15,6 +15,6 @@ public class ArquivoExceptionAdvice extends ResponseEntityExceptionHandler {
     public ResponseEntity<ResponseMessage> handleMaxSizeException(MaxUploadSizeExceededException exc) {
         return ResponseEntity
                 .status(HttpStatus.EXPECTATION_FAILED)
-                .body(new ResponseMessage("Um ou mais arquivos são muito grandes!"));
+                .body(new ResponseMessage(new StringBuilder("Um ou mais arquivos são muito grandes!")));
     }
 }
